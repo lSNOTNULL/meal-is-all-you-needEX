@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>meal-is-all-you-needEX</artifactId>
+    <artifactId>meal-is-all-you-need</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>meal-is-all-you-needEX</name>
+    <name>meal-is-all-you-need</name>
     <packaging>war</packaging>
 
-        <properties>
+    <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.target>17</maven.compiler.target>
         <maven.compiler.source>17</maven.compiler.source>
@@ -75,10 +75,14 @@
                 <directory>src/main/resources</directory>
                 <includes>
                     <include>.env</include>
+                    <!-- 아... 누가 필요 없다고 그랬냐? -->
+                    <!-- **/ 어느 경로에 있든지 -->
+                    <!-- .xml 확장자를 쓰면 빌드 파일에 넣어달라 -->
+                    <include>**/*.xml</include>
                 </includes>
             </resource>
         </resources>
     </build>
 
-    
+
 </project>

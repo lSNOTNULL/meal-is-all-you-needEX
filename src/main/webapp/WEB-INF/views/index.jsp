@@ -13,7 +13,11 @@
             <% for (Anime a : (List<Anime>)request.getAttribute("result")) {
                 %>
             <li>
-                <%= a.title()%> / <%= a.description()%> / <%= a.createdAt() %>
+                <%= a.title()%> / <%= a.description()%> / <%= a.createdAt() %> / <%= a.votes() %>
+                <form method="post" action="vote">
+                    <input type="hidden" value="<%= a.uuid() %>" name="uuid" />
+                <button> 추천 </button>
+                </form>
             </li>
 
             <%

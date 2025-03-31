@@ -31,7 +31,9 @@
 <!--        VALUES (#{uuid})-->
 <!--    </insert>-->
     <select id="getAllAnimes" resultMap="AnimeResultMap">
-        SELECT anime_id, title, description, created_at
+--         SELECT anime_id, title, description, created_at
+        SELECT anime_id, title, description, date_add(created_at, INTERVAL 9 HOUR) AS created_at
+-- UTC + 9 로 설정, DB값 자체는 건들지 않음.
         from animes
         order by created_at
     </select>
